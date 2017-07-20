@@ -229,6 +229,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   bcrypt
   byebug
   capybara

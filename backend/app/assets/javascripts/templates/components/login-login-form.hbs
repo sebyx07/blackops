@@ -1,0 +1,16 @@
+{{#if currentUser.user}}
+  Welcome {{currentUser.user.username}}
+  <button {{action "logout"}}>
+    Logout
+  </button>
+{{else}}
+  {{input value=username placeholder="Username"}}
+  {{input value=password placeholder="Password"}}
+  <button {{action "login"}}>
+      Login
+  </button>
+
+  {{#if error}}
+      <p>{{error}}</p>
+  {{/if}}
+{{/if}}

@@ -34,3 +34,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'mocha'
 end
+
+# Api
+gem 'active_model_serializers'
