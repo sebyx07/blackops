@@ -25,3 +25,12 @@ end
 # Emberjs
 gem 'ember-rails'
 gem 'jquery-rails'
+
+
+# Testing
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'mocha'
+end
