@@ -1,0 +1,3 @@
+guard 'kemal', path: 'src', file: 'ws.cr' do
+  watch(%r{src/.*\.cr})
+end
