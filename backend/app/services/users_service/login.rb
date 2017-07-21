@@ -5,6 +5,8 @@ module UsersService
       if user && user.authenticate(params[:password])
         self.user = user
       end
+      user.session = SecureRandom.urlsafe_base64(180)
+      user.save
       self
     end
   end

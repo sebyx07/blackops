@@ -5,7 +5,7 @@ class AuthenticationController < ApplicationController
     login = UsersService::Login.new(params: params)
                                .process
     if login.user.present?
-      set_session(login.user)
+      set_session(login.user.session)
       render_current_user(login.user)
     else
       head 404
@@ -13,7 +13,7 @@ class AuthenticationController < ApplicationController
   end
 
   def logout
-    session[:user_id] = nil
+    cookies[:token] = nil
     head :ok
   end
 
@@ -25,8 +25,8 @@ class AuthenticationController < ApplicationController
     render json: user
   end
 
-  def set_session(user)
-    session[:user_id] = user.id
+  def set_session(session)
+    cookies.permanent[:token] = session
   end
 
   private :set_session, :render_current_user

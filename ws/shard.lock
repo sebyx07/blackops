@@ -1,5 +1,13 @@
 version: 1.0
 shards:
+  active_record:
+    github: waterlink/active_record.cr
+    version: 1.0.5
+
+  db:
+    github: crystal-lang/crystal-db
+    version: 0.4.2
+
   kemal:
     github: kemalcr/kemal
     commit: 1d056b203b8a4551cab37fc8c975151a228e3c66
@@ -8,7 +16,35 @@ shards:
     github: jeromegn/kilt
     version: 0.4.0
 
+  pg:
+    github: will/crystal-pg
+    version: 0.13.3
+
+  pool:
+    github: ysbaddaden/pool
+    version: 0.2.3
+
+  postgres_adapter:
+    github: waterlink/postgres_adapter.cr
+    version: 0.5.1
+
+  query:
+    github: waterlink/query.cr
+    version: 0.2.5
+
   radix:
     github: luislavena/radix
     version: 0.3.8
+
+  redis:
+    github: stefanwille/crystal-redis
+    version: 1.8.0
+
+  sentry:
+    github: samueleaton/sentry
+    commit: 7150da037d7e0267c156336194aa346922ec962b
+
+  sentry-run:
+    github: faustinoaq/sentry-run
+    version: 0.1.6
 

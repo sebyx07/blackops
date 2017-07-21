@@ -1,0 +1,2 @@
+class WsServer < ApplicationRecord
+end

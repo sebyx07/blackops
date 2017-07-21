@@ -16,3 +16,9 @@ dependencies:
   kemal:
     github: kemalcr/kemal
     branch: master
+  active_record:
+    github: waterlink/active_record.cr
+  postgres_adapter:
+    github: waterlink/postgres_adapter.cr
+  redis:
+    github: stefanwille/crystal-redis

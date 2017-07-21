@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720152526) do
+ActiveRecord::Schema.define(version: 20170721061445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,33 @@ ActiveRecord::Schema.define(version: 20170720152526) do
     t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "session"
+    t.index ["session"], name: "index_users_on_session"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  create_table "ws_servers", force: :cascade do |t|
+    t.string "name"
+    t.string "family"
+    t.integer "connections", default: 0
+    t.boolean "online", default: false
+    t.index ["family"], name: "index_ws_servers_on_family"
+    t.index ["name"], name: "index_ws_servers_on_name", unique: true
+    t.index ["online"], name: "index_ws_servers_on_online"
+  end
+
+  create_table "ws_sessions", id: false, force: :cascade do |t|
+    t.string "id"
+    t.uuid "user_id"
+    t.bigint "ws_server_id"
+    t.string "channel"
+    t.boolean "room"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["channel"], name: "index_ws_sessions_on_channel"
+    t.index ["user_id"], name: "index_ws_sessions_on_user_id"
+    t.index ["ws_server_id"], name: "index_ws_sessions_on_ws_server_id"
+  end
+
+  add_foreign_key "ws_sessions", "ws_servers"
 end

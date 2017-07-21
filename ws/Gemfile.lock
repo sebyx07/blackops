@@ -3,6 +3,8 @@ GEM
   specs:
     coderay (1.1.1)
     ffi (1.9.18)
+    filewatcher (0.5.4)
+      trollop (~> 2.0)
     formatador (0.2.5)
     guard (2.14.1)
       formatador (>= 0.2.4)
@@ -38,11 +40,13 @@ GEM
     shellany (0.0.1)
     slop (3.6.0)
     thor (0.19.4)
+    trollop (2.1.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  filewatcher
   guard-kemal
 
 BUNDLED WITH

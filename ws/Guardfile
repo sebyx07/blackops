@@ -1,3 +1,3 @@
 guard 'kemal', path: 'src', file: 'ws.cr' do
-  watch(%r{src/.*\.cr})
+  watch(%r{src/.*\.cr}) # watch your views
 end
