@@ -25,7 +25,7 @@ end
 # Emberjs
 gem 'ember-rails'
 gem 'jquery-rails'
-
+gem 'momentjs-rails'
 
 # Testing
 group :development, :test do

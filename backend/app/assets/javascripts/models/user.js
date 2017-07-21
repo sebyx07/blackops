@@ -2,5 +2,6 @@
 
 Backend.User = DS.Model.extend({
   username: DS.attr(),
-  role: DS.attr()
+  role: DS.attr(),
+  lastSeen: DS.attr('moment')
 });

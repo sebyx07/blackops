@@ -3,6 +3,7 @@
 //= require ./environment
 //= require ember
 //= require ember-data
+//= require moment
 //= require active-model-adapter
 
 //= require_self

@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20170721061445) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "session"
+    t.datetime "last_seen"
+    t.index ["last_seen"], name: "index_users_on_last_seen"
     t.index ["session"], name: "index_users_on_session"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
